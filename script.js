@@ -1,6 +1,6 @@
 const inputNumber = document.querySelector('.guess');
 const Checkbutton = document.querySelector('.check');
-const randomNumber = Math.floor(Math.random() * 100) + 1;
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 const AgainButton = document.querySelector('.again');
 let score = 0;
 let highscore = 0;
@@ -33,7 +33,7 @@ Checkbutton.addEventListener('click', function () {
 
 
 AgainButton.addEventListener('click', function () {
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 100) + 1;
     score = 0;
     document.body.style.backgroundColor = '#222';
     document.querySelector('.number').textContent = '?';
