@@ -14,7 +14,10 @@ Checkbutton.addEventListener('click', function () {
     Checkbutton.disabled = true;
    Checkbutton.style.cursor = 'not-allowed';
     score ++;
-    highscore ++;
+    if (score < highscore || highscore === 0) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+  }
     document.body.style.backgroundColor = '#60b347';    
     document.querySelector('.number').textContent = randomNumber;
     document.querySelector('.message').textContent = "🎉 Correct number!";
@@ -41,5 +44,6 @@ AgainButton.addEventListener('click', function () {
     document.querySelector('.message').textContent = 'Start guessing...';
     document.querySelector('.score').textContent = 0;
     inputNumber.value = '';
+    
 });
 
